@@ -1,22 +1,40 @@
-Will It Rain? — Weather Forecast API
+# Will It Rain? — Weather Forecast API
 
-Backend for a weather probability forecasting tool built at NASA Space Apps Challenge 2024, Tbilisi.
+Backend for a weather probability forecasting tool built at **NASA Space Apps Challenge 2024, Tbilisi**.
 
-What it does
+## What it does
 
 Given a location (lat/lon) and a target date, the API returns historical climate-based probabilities for:
 
-Rain — no rain / moderate / heavy, using a blended climatology + Markov chain model
-Temperature — Very Cold / Cold / Mild / Warm / Very Hot
-Wind — No Wind / Windy
+- **Rain**: no rain / moderate / heavy, using a blended climatology + Markov chain model
+- **Temperature**: Very Cold / Cold / Mild / Warm / Very Hot
+- **Wind**: No Wind / Windy
 
-Data source: NASA POWER API — 20 years of daily historical climate data.
+Data source: [NASA POWER API](https://power.larc.nasa.gov/) — 20 years of daily historical climate data.
 
-Demo
+## How to run
 
-[📹 Watch the demo
-](https://www.youtube.com/watch?v=6qGB3TKN34M)
+```bash
+pip install flask flask-cors pandas numpy requests
+python weather_api.py
+```
 
-Team
+## API
+
+**POST** `/predict_all`
+
+```json
+{
+  "lat": 41.7151,
+  "lon": 44.8271,
+  "date_str": "2024-06-15"
+}
+```
+
+## Demo
+
+[Watch the demo](https://www.youtube.com/watch?v=6qGB3TKN34M)
+
+## Team
 
 Built by Nikoloz Blavatsky and teammates at NASA Space Apps Challenge 2024, Tbilisi.
